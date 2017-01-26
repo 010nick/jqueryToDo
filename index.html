@@ -99,19 +99,26 @@
       Total: <span id="total-count">1</span>
     </div>
   </div>
-
+  <script src="main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 
-  function toggleDone() {
-  var checkbox = this;
 
-  $(checkbox).parent().toggleClass("completed");
+  </script>
 
-  updateCounters();
-  }
 
-  $("input[type=checkbox]").bind('change', toggleDone());
+  <script>
+    $("#total-count").html($(".todo").length);
 
+    function updateCounters() {
+  var ntodos = $(".todo").length;
+  var ncompleted = $(".completed").length
+
+  $("#total-count").html(ntodos);
+  $("#completed-count").html(ncompleted);
+  $("#todo-count").html(ntodos - ncompleted);
+}
+
+updateCounters();
   </script>
 </body>
 </html>
