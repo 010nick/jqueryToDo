@@ -74,6 +74,8 @@
       text-decoration: underline;
     }
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="todo.js"></script>
 </head>
 <body>
   <div class="container">
@@ -96,29 +98,9 @@
     <div class="footer">
       Todo: <span id="todo-count">1</span> •
       Done: <span id="completed-count">0</span> •
-      Total: <span id="total-count">1</span>
+      Total: <span id="total-count">1</span> •
+      <a href="#" id="clean-up">Clean up</a>
     </div>
   </div>
-  <script src="main.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-
-
-  </script>
-
-
-  <script>
-    $("#total-count").html($(".todo").length);
-
-    function updateCounters() {
-  var ntodos = $(".todo").length;
-  var ncompleted = $(".completed").length
-
-  $("#total-count").html(ntodos);
-  $("#completed-count").html(ncompleted);
-  $("#todo-count").html(ntodos - ncompleted);
-}
-
-updateCounters();
-  </script>
 </body>
 </html>
